@@ -60,7 +60,12 @@ namespace TechJobs.Models
                 {
                     string aValue = row[key];
 
-                    if (aValue.ToLower().Contains(value.ToLower()))
+                    if (value == null)
+                    {
+                        break;
+                    }
+
+                    else if (aValue.ToLower().Contains(value.ToLower()))
                     {
                         jobs.Add(row);
 
@@ -91,7 +96,13 @@ namespace TechJobs.Models
             {
                 string aValue = row[column];
 
-                if (aValue.ToLower().Contains(value.ToLower()))
+                // ****************else if ()
+                if (value == null)
+                {
+                    break;
+                }
+
+                else if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }

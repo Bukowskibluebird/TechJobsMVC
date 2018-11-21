@@ -26,9 +26,22 @@ namespace TechJobs.Controllers
             else
             {
                 List<Dictionary<string, string>> jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
+                List<Dictionary<string, string>> noJobs = new List<Dictionary<string, string>>();
                 ViewBag.columns = ListController.columnChoices;
                 // ViewBag.title = "Jobs with " + searchType[searchTerm] + ": " + searchTerm;
-                ViewBag.jobs = jobs;
+
+                // if () == true)
+
+                if (jobs.Count == 0)
+                {
+                    ViewBag.jobs = noJobs;
+                }
+
+                else
+                {
+                    ViewBag.jobs = jobs;
+                }
+
             }
             
 
